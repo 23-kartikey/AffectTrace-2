@@ -1,0 +1,17 @@
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: affecttrace-postgres
+    environment:
+      POSTGRES_DB: affecttrace
+      POSTGRES_USER: affecttrace
+      POSTGRES_PASSWORD: sparsh_sucks
+    ports:
+      - "5432:5432"
+    volumes:
+      - affecttrace-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  affecttrace-data:
